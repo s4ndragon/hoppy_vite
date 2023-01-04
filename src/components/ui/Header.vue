@@ -9,33 +9,23 @@
             </div>
             <ul class="nav_links">
                 <li>
-                    <a :class="{ 'nav-active': routeMatch == '/Beers' }" class="beers" @click="jumpRoute('Beers')"
-                        >BEERS</a
-                    >
+                    <router-link to="/Beers">BEERS</router-link>
                 </li>
                 <li>
-                    <a :class="{ 'nav-active': routeMatch == '/Taproom' }" class="taproom" @click="jumpRoute('Taproom')"
-                        >TAPROOM</a
-                    >
+                    <router-link to="/Taproom">TAPROOM</router-link>
                 </li>
                 <li>
-                    <a :class="{ 'nav-active': routeMatch == '/Brewery' }" class="brewery" @click="jumpRoute('Brewery')"
-                        >BREWERY</a
-                    >
+                    <router-link to="/Brewery">BREWERY</router-link>
                 </li>
                 <li>
-                    <a :class="{ 'nav-active': routeMatch == '/About' }" class="about" @click="jumpRoute('About')"
-                        >ABOUT</a
-                    >
+                    <router-link to="/About">ABOUT</router-link>
                 </li>
                 <li>
-                    <a :class="{ 'nav-active': routeMatch == '/Events' }" class="events" @click="jumpRoute('Events')"
-                        >EVENTS</a
-                    >
+                    <router-link to="/Events">EVENTS</router-link>
                 </li>
             </ul>
             <div class="logo">
-                <a @click="jumpRoute('Home')"><img src="@/assets/images/logo.png" alt="" /></a>
+                <a href="/"><img src="@/assets/images/logo.png" alt="" /></a>
             </div>
         </nav>
     </header>
@@ -90,7 +80,80 @@ const jumpRoute = (routePram) => {
 };
 </script>
 <style lang="scss">
-.nav-active {
-    color: #000 !important;
+// .nav-active {
+//     color: #000 !important;
+// }
+
+/* logo & nav */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    nav {
+        height: 90px;
+        background: #60a41d;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+        }
+        .logo {
+            /* border: 1px solid blue; */
+            width: 30%;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            padding-left: 3%;
+            a {
+                text-decoration: none;
+            }
+            img {
+                /* border: 1px solid red; */
+                font-family: "Modak", cursive;
+                color: #60a41d;
+                font-size: 70px;
+                font-weight: 100;
+                min-width: 200px;
+                max-width: 200px;
+                /* height: 8vh; */
+                /* position: relative; */
+                /* padding-top: 1vh; */
+                -webkit-text-stroke: 3.5px #22201f;
+                padding-left: 5%;
+                display: flex;
+                align-self: center;
+                justify-self: center;
+                align-content: center;
+                justify-content: center;
+            }
+        }
+    }
+    .nav_links {
+        /* border: 1px solid red; */
+        display: flex;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: auto;
+        padding-top: 5px;
+        li {
+            a {
+                /* border: 1px solid white; */
+                color: #fff;
+                text-decoration: none;
+                font-size: 32px;
+                font-family: "Baloo Tamma 2", cursive;
+                font-weight: 700;
+            }
+            a.router-link-active {
+                color: #000;
+            }
+        }
+    }
 }
 </style>

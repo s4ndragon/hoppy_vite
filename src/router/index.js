@@ -11,23 +11,34 @@ const router = createRouter({
             name: "HOME",
             component: () => import("@/views/Home.vue"),
         },
-        {
-            path: "/Home",
-            // component: () => import("@/views/Home/Home.vue"),
-            name: "HOME",
-            component: () => import("@/views/Home.vue"),
-        },
+        // {
+        //     path: "/Home",
+        //     // component: () => import("@/views/Home/Home.vue"),
+        //     name: "HOME",
+        //     component: () => import("@/views/Home.vue"),
+        // },
         {
             path: "/Beers",
             // component: () => import("@/views/Home/Home.vue"),
             name: "BEERS",
             component: () => import("@/views/Beers.vue"),
-            children: [
-                {
-                    path: "/Beers/:id",
-                    component: () => import("@/componemts/beers/BeerInfo.vue"),
-                },
-            ],
+            // children: [
+            //     {
+            //         path: "/:beerId",
+            //         component: () => import("@/components/beers/BeerInfo.vue"),
+            //     },
+            // ],
+        },
+        {
+            path: "/Beers/:beerId",
+            // component: () => import("@/views/Home/Home.vue"),
+            component: () => import("@/components/beers/BeerInfo.vue"),
+            // children: [
+            //     {
+            //         path: "/:beerId",
+            //         component: () => import("@/components/beers/BeerInfo.vue"),
+            //     },
+            // ],
         },
         {
             path: "/Taproom",

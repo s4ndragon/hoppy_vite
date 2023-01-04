@@ -511,73 +511,7 @@ main {
     }
 }
 
-/* logo & nav */
-header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-nav {
-    height: 90px;
-    background: #60a41d;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-.logo {
-    /* border: 1px solid blue; */
-    width: 30%;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    padding-left: 3%;
-}
-.logo a {
-    text-decoration: none;
-}
-.logo img {
-    /* border: 1px solid red; */
-    font-family: "Modak", cursive;
-    color: #60a41d;
-    font-size: 70px;
-    font-weight: 100;
-    min-width: 200px;
-    max-width: 200px;
-    /* height: 8vh; */
-    /* position: relative; */
-    /* padding-top: 1vh; */
-    -webkit-text-stroke: 3.5px #22201f;
-    padding-left: 5%;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    align-content: center;
-    justify-content: center;
-}
-.nav_links {
-    /* border: 1px solid red; */
-    display: flex;
-    list-style: none;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: auto;
-    padding-top: 5px;
-}
-.nav_links li a {
-    /* border: 1px solid white; */
-    color: #fff;
-    text-decoration: none;
-    font-size: 32px;
-    font-family: "Baloo Tamma 2", cursive;
-    font-weight: 700;
-}
-.hamburger {
-    width: 30px;
-    height: 20px;
-    position: relative;
-}
+
 
 /* =========  section 1  ========= */
 @media screen and (min-width: 576px) {
@@ -627,7 +561,8 @@ section.promo {
 /* =========  section 2  ========= */
 section.product {
     position: relative;
-    top: 90px;
+    // top: 90px;
+    height: calc(100vh - 90px);
 }
 ul li a {
     display: flex;
