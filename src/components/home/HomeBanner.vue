@@ -4,7 +4,7 @@
             <router-link :to="linkToPromo">
                 <img
                     class="hoptimum_bottle"
-                    :src="'src/assets/images/home/' + homeBanner.name + '.png'"
+                    :src="'src/assets/images/home/banner/' + homeBanner.name + '.png'"
                     alt="hopyimum"
                 />
             </router-link>
@@ -19,10 +19,14 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import api from "@/plugins/api.js";
+
+// loadin homeBanner info
+const homeBanner = ref([]);
 onMounted(async () => {
     homeBanner.value = await api.getHomeBanner();
 });
-const homeBanner = ref([]);
+
+// get the link of homeBanner product
 const linkToPromo = computed(() => "/Beers/" + homeBanner.value.id);
 
 // https://hoppy-vue-cli-bfe34-default-rtdb.asia-southeast1.firebasedatabase.app/homeBanner
